@@ -1,4 +1,4 @@
-## ## Mapping the Repertoire of Gregorian Chant - tool
+## ChantMapper
 
 The `Gregorian_chant_repertoire` folder contains an application programmed in the Django framework. It is a tool for musicologists to help them with exploring the results of a computational search for repertoire traditions within Gregorian chant.
 
