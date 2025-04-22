@@ -3,8 +3,10 @@
 
     
     {% block side_buttons %}
-    <div class="container ms-4 mt-3 mr" style="float:right">
-      <button type="button" class="btn btn-outline-secondary me-3" style="float:right" onclick="window.history.back()">Back</button>
+    <div class="back-button">
+      <div class="container ms-4 mt-3 mr" style="float:right">
+        <button type="button" class="btn btn-outline-secondary me-3 sticky-top" style="float:right" onclick="window.history.back()">Back</button>
+      </div>
     </div>
     {% endblock %}
 
@@ -281,11 +283,11 @@
             To create your user account you have to go to home page (click on the Chantmapper sign in the top grey bar)
             and then click on right on the button Create account:
             <div class="container mt-1 mb-1 ml-4">
-              <img class="help_pic" src="{% static 'web_pictures/new_user.png' %}" width="200" height="auto">
+              <img class="help_pic" src="{% static 'web_pictures/new_user.png' %}" width="440" height="auto">
             </div>
             That would take you to Registration page:
             <div class="container mt-1 mb-1 ml-4">
-              <img class="help_pic" src="{% static 'web_pictures/reg.png' %}" width="200" height="auto">
+              <img class="help_pic" src="{% static 'web_pictures/reg.png' %}" width="240" height="auto">
             </div>
             Your username can be almost anything, with password we require a certain "strength",
             for that follow please instructions in red that would appear in case of some problems.
@@ -297,7 +299,7 @@
             To do so you have to go to home page (click on the ChantMapper sign in the top grey bar)
             and the click on right on the button Login:
             <div class="container mt-1 mb-1 ml-4">
-              <img class="help_pic" src="{% static 'web_pictures/log_me.png' %}" width="240" height="auto">
+              <img class="help_pic" src="{% static 'web_pictures/log_me.png' %}" width="440" height="auto">
             </div>
             That would take you to Login page:
             <div class="container mt-1 mb-1 ml-4">

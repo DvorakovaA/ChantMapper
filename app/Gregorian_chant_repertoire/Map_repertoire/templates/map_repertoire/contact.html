@@ -17,7 +17,62 @@
           Do you have any kind of feedback? <br> <br>
 
           <h4>Do not hesitate or worry and let us know!</h4>
-          The easiest way to do so is to use our email address: <br>
+          <h5>You can either use this contact form:</h5>
+          <form method="POST" action="." class="container mb-3 mt-3">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+              <label for="{{ form.name.id_for_label }}">Your name:</label>
+              <div class="ms-3">
+                {{ form.name }}
+              </div>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <label for="{{ form.email.id_for_label }}">Your email address:</label>
+              <div class="ms-3">
+                {{ form.email }}
+              </div>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <label for="{{ form.subject.id_for_label }}">Subject:</label>
+              <div class="ms-3">
+                {{ form.subject }}
+              </div>
+            </div>
+
+            <div class="mb-3 mt-3">
+              <label for="{{ form.message.id_for_label }}">Message:</label> 
+              <div class="ms-3">
+                {{ form.message }}
+              </div>
+              <i>If reporting a mistake you made or found, please provide as much detail as possible 
+                for us, so that we would be able to solve it (e. g. your username, name of dataset you upload a mistake in, 
+                what shloud be the right coordinates, etc). </i> <br>
+            </div>
+
+            {% if request.session.contact_error %}
+              <div class="container ms-4" style="color: red;">
+                {% for error in request.session.contact_error.as_data.values %}
+                  {% for data in error.0 %}
+                    {{ data }}
+                  {% endfor %}
+                {% endfor %}
+              </div>
+              <br>
+            {% endif %}
+
+            <button type="submit" class="btn btn-outline-secondary">Submit</button>
+          </form>
+          <br>
+          {% if contact_success %}
+            <div class="container" style="color: green;">
+              <h4>Your message was sent successfully!</h4>
+            </div>
+            <br>
+          {% endif %}
+
+          <h5>Or use directly our email address: </h5>
           <div class="container ml-2 mb-2">
             <b><a href="mailto:chantmapper@gmail.com">chantmapper@gmail.com</a></b>
           </div>
